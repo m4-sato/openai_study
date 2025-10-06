@@ -22,6 +22,9 @@
 
 案件の話
 
+- [KDDI DAC](https://biz.kddi.com/beconnected/feature/2024/240306/)
+- [ソフトバンクの動き](https://news.yahoo.co.jp/articles/18aa8b8a3405c6670544546714a390c0175431e0)
+
 ---
 
 ### ChatGPT について
@@ -36,6 +39,8 @@
 ### ChatGPT の原理について
 
 - GPT（Generative Pre-trained Transformer）とは？
+  [Attention 論文](https://arxiv.org/pdf/1706.03762)
+  ![alt text](attention_.png)
 
   - GPT は、OpenAI が開発した自然言語処理のための大規模な言語モデル。
   - GPT は、Transformer アーキテクチャに基づいており、自己注意機構を利用して文脈を理解し、文章を生成します。
