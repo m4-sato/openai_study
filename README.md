@@ -32,19 +32,19 @@
 - ChatGPT は、OpenAI が 2022 年 11 月 30 日にサービスとしてローンチした大規模な言語モデルであり、自然言語処理のタスクにおいて高い性能を得ている。
 - ChatGPT は、**GPT（Generative Pre-trained Transformer）アーキテクチャ**に基づいており、膨大なテキストデータを学習して、人間のような文章生成や対話が可能。
 
-⇒**GPT（Generative Pre-trained Transformer）**とは?
+- **GPT（Generative Pre-trained Transformer）**とは?
+
+  - GPT は、OpenAI が開発した自然言語処理のための大規模な言語モデル。
+  - GPT は、Transformer アーキテクチャに基づいており、自己注意機構を利用して文脈を理解し、文章を生成します。
+
+  [Attention 論文](https://arxiv.org/pdf/1706.03762)
+  ![alt text](attention_.png)
+
+  - GPT は文章の続きを生成する言語モデルといえます。
 
 ---
 
 ### ChatGPT の原理について
-
-- GPT（Generative Pre-trained Transformer）とは？
-  [Attention 論文](https://arxiv.org/pdf/1706.03762)
-  ![alt text](attention_.png)
-
-  - GPT は、OpenAI が開発した自然言語処理のための大規模な言語モデル。
-  - GPT は、Transformer アーキテクチャに基づいており、自己注意機構を利用して文脈を理解し、文章を生成します。
-  - GPT は文章の続きを生成する言語モデルといえます。
 
 - **ChatGPT の学習プロセス**
 
