@@ -1,4 +1,4 @@
-# 10/7 AI ラボ　内容 ChatGPT の原理・活用法について
+# 10/7 AI ラボ　内容 ChatGPT の原理について
 
 ## 経緯
 
@@ -43,7 +43,7 @@
 
 - **ChatGPT の学習プロセス**
 
-前提として InstructGPT の学習の流れを GPT-3 に適用したものが ChatGPT。
+前提として**InstructGPT**の学習の流れを GPT-3 に適用したものが ChatGPT。
 
 - [InstructGPT](https://openai.com/ja-JP/index/instruction-following/) 論文より
 
