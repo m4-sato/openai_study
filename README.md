@@ -1,12 +1,11 @@
-# 10/7 AI ラボ　内容 ChatGPT の原理について
+# 10/7 AI ラボ　 ChatGPT の原理について
 
 ## 経緯
 
-過去の案件相談において、OpenAI が開発した ChatGPT のような AI を自社にも導入できないかという問い合わせがあった。
-その中でも、LLM の回答精度を改善する仕組みがつくれないかという難易度高めの話もあり。
+過去の案件相談において、OpenAI が開発した ChatGPT のような 精度改善可能な仕組みを自社にも導入できないかという問い合わせがあった。（難易度高め）
 
-そこで ChatGPT の原理や改善手法について理解を深めるための勉強会を開催することとしました。
-（ChatGPT を理解すれば、応用できるかもという期待も込めて）
+じゃあどうすればニーズにこたえられるのか自問し、ChatGPT の原理や改善手法について理解を深めればため応用できるのではないかと考えた。
+
 今回は、ChatGPT の基本的な原理について解説します。
 [OpenAI サイトより](https://openai.com/ja-JP/index/instruction-following/)
 
@@ -35,12 +34,10 @@
 - **GPT（Generative Pre-trained Transformer）**とは?
 
   - GPT は、OpenAI が開発した自然言語処理のための大規模な言語モデル。
-  - GPT は、Transformer アーキテクチャに基づいており、自己注意機構を利用して文脈を理解し、文章を生成します。
+  - GPT は、Transformer アーキテクチャに基づいており、自己注意機構を利用して文脈を理解し、文章を生成します。**※あくまで確率的なモデルであり次に出力する単語を予測している。** （条件付き確率）
 
   [Attention 論文](https://arxiv.org/pdf/1706.03762)
   ![alt text](attention_.png)
-
-  - GPT は文章の続きを生成する言語モデルといえます。
 
 ---
 
@@ -63,9 +60,18 @@
 
   - 人間のフィードバックを利用して、モデルの出力をさらに改善。
   - ポリシー勾配法などの強化学習アルゴリズムを用いて、モデルがより良い応答を生成するように学習。
+  - 補足
+    - PPO（Proximal Policy Optimization）は、強化学習におけるポリシー最適化手法の一つで、モデルのパラメータを更新する際に、大きな変動を避けるためのクリッピング手法を導入している。
 
 - 目的関数
   ![alt text](RL.png)
+
+  - 第１項
+    - 報酬モデルの出力を最大化する役割を果たす。
+  - 第２項
+    KL ペナルティ（Kullback-Leibler Divergence）で、現在のポリシーと元のポリシーの乖離を抑制する役割を果たす。
+  - 第３項
+    pretrained model からの出力を参照し、元のモデルから大きく逸脱しないようにするためのペナルティ項。
 
 ---
 
@@ -81,7 +87,6 @@
   - LoRA（PEFT ライブラリの活用）
   - QLoRA
   - Prompt Tuning
-  - RL
 
 ※RAG（Retrieval Augmented Generation）は検索タスクで使用されるもの。
 
@@ -90,5 +95,8 @@
 ### 参考文献
 
 - [InstructGPT 論文](https://arxiv.org/abs/2203.02155)
+- [Attention is All You Need 論文](https://arxiv.org/pdf/1706.03762)
+- [PPO 論文](https://arxiv.org/abs/1707.06347)
+- [Reward Model 論文](https://arxiv.org/pdf/2009.01325)
 - [松尾研究所 経済産業省向け説明資料](https://www.meti.go.jp/shingikai/mono_info_service/digital_jinzai/pdf/008_05_00.pdf)
 - [LLM のファインチューニングと RAG](https://www.ohmsha.co.jp/book/9784274231957/)
