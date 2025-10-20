@@ -1,4 +1,4 @@
-# 10/7 AI ラボ　 ChatGPT の原理について
+# 10/7 AI ラボ　 LLM 精度改善に向けた ChatGPT の原理の理解について
 
 ## 経緯
 
@@ -11,18 +11,8 @@
 
 ## 目次
 
-- 前置き
 - ChatGPT の原理について
 - まとめ
-
----
-
-### 前置き
-
-案件の話
-
-- [KDDI DAC](https://biz.kddi.com/beconnected/feature/2024/240306/)
-- [ソフトバンクの動き](https://news.yahoo.co.jp/articles/18aa8b8a3405c6670544546714a390c0175431e0)
 
 ---
 
@@ -51,9 +41,11 @@
 
 ![alt text](image.png)
 
+- step0：事前学習
+  　 GPT-3 には教師なし学習が既になされている。
+  （大規模なテキストコーパスを読んで、単語の出現パターン・意味の構成を学ぶ）
 - **step1: SFT（Supervised Fine-Tuning）教師あり学習**
   - プロンプトの入力例に対し、人間が正解例を作成し、教師あり学習の形式で GPT-3 の Fine-tuning を実施。
-  - 実は裏側では GPT-3 には教師なし学習が既になされていることに注意。
 - **step2: Reward Model の学習**
   - 人間が複数の応答例を評価し、ランキング付けを行い、これを基に報酬モデル（Reward Model）を学習させる。
 - **step3: PPO を用いた強化学習 (Reinforcement Learning)**
@@ -90,6 +82,9 @@
 
 ※RAG（Retrieval Augmented Generation）は検索タスクで使用されるもの。
 
+- 推論フェーズでの改善も期待できる？
+  応答を生成する前にたくさん考えると回答品質も良くなる（Test-Time Scaling）
+
 ---
 
 ### 参考文献
@@ -100,3 +95,6 @@
 - [Reward Model 論文](https://arxiv.org/pdf/2009.01325)
 - [松尾研究所 経済産業省向け説明資料](https://www.meti.go.jp/shingikai/mono_info_service/digital_jinzai/pdf/008_05_00.pdf)
 - [LLM のファインチューニングと RAG](https://www.ohmsha.co.jp/book/9784274231957/)
+- [OpenAI Reasoning](https://platform.openai.com/docs/guides/reasoning)
+- [Agent Internet Ecosystem](https://arxiv.org/html/2504.16736v2)
+- [Transformer 解説](https://speakerdeck.com/yushiku/20220608_ssii_transformer)
